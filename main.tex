@@ -1,0 +1,37 @@
+\include{definitions}
+
+\newcommand{\doctitle}{Documentation}
+\newcommand{\docsubtitle}{Technical Documentation}
+\newcommand{\docauthor}{Author}
+\newcommand{\doccompany}{Payvision}
+\newcommand{\doccompanyname}{Payvision Spain, S.L.}
+\newcommand{\docversion}{1.0}
+\newcommand{\doccreationdate}{\today}
+% \newcommand{\docreferencecode}{}
+% \newcommand{\docreviewers}{}
+
+\begin{document}
+
+\pagenumbering{gobble}
+\include{titlepage}
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{copyright}
+\include{changelog}
+
+\tableofcontents\newpage
+\listoffigures\newpage
+\listoftables\newpage
+\lstlistoflistings\newpage
+
+\setlength{\parskip}{0.75em}
+
+\include{sections/lipsum}
+\include{sections/figures}
+\include{sections/tables}
+\include{sections/codesnippets}
+
+\printbibliography
+
+\end{document}

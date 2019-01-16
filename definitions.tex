@@ -1,0 +1,50 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{courier}
+\usepackage{tgheros}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage[backend=bibtex,style=verbose-trad2]{biblatex}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{fancyhdr}
+\usepackage{ltablex}
+\usepackage[a4paper,includeheadfoot,top=0.54cm, bottom=4.54cm, left=2.54cm, right=2.54cm]{geometry}
+\usepackage[newfloat]{minted}
+
+% Lorem Ipsum text, for demonstration purposes only
+\usepackage{lipsum} 
+
+\renewcommand\familydefault{\sfdefault} 
+
+% Tables
+\renewcommand{\arraystretch}{1.4}
+\keepXColumns
+
+% Graphics
+\graphicspath{{./pictures/}}
+
+% Bibliography
+\bibliography{references} 
+
+% Paragraphs settings
+\setlength{\parindent}{0pt}
+
+% Code snippet
+\newenvironment{codesnippet}{\captionsetup{type=listing}}{}
+\SetupFloatingEnvironment{listing}{name=Code}
+\setminted{fontsize=\small,baselinestretch=1}
+\captionsetup[listing]{position=below,aboveskip=0pt,belowskip=10pt}
+
+% Header & footer
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.2pt}
+\chead{\includegraphics[width=\textwidth]{header}}
+\fancyfoot[L]{\fontsize{11}{12}\selectfont \doccompany} 
+\fancyfoot[C]{\fontsize{11}{12}\selectfont \doctitle}
+\fancyfoot[R]{\fontsize{11}{12}\selectfont Page \thepage} 
+\pagestyle{fancy}
+\setlength{\headheight}{87pt}

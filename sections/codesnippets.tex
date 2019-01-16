@@ -1,0 +1,17 @@
+\section{Code snippets}
+
+Minted is a pack­age that fa­cil­i­tates ex­pres­sive syn­tax high­light­ing in \LaTeX\ us­ing the pow­er­ful Pyg­ments li­brary. The pack­age also pro­vides op­tions to cus­tomize the high­lighted source code out­put us­ing \texttt{fan­cyvrb}.
+
+\subsection{Example}
+This is an example of code snippet, code \ref{lst:my_func} is a dummy code.
+
+\begin{codesnippet}
+\begin{minted}[frame=single,breaklines]{c}
+int main()
+{
+    printf("Hello, World!");
+    return 0;
+}
+\end{minted}
+\caption{My func}\label{lst:my_func}
+\end{codesnippet}
