@@ -9,13 +9,6 @@ If you’re new to TeX and LaTeX or just want an easy installation, get a full T
 - [LaTeX](https://www.latex-project.org/get/)
 - [Pygments](http://pygments.org/)
 
-# TeX editors
-
-If you prefer compose your documents in an integrated writing environment you can choose from an extensive variety of TeX editors, the most complete are:
-
-- [TeXstudio](https://www.texstudio.org/)
-- [Texmaker](http://www.xm1math.net/texmaker/)
-
 # Compile
 
 Once you have prepared and saved the .tex file, it still must be compiled before it can be turned into a readable document. 
@@ -36,6 +29,69 @@ Build the image: `docker build . -t latex` and invoke `pdflatex` form the contai
 
 ```shell
 docker run -i --rm -w /data -v ${pwd}:/data latex pdflatex [filename].tex
+```
+
+# TeX editors
+
+If you prefer compose your documents in an integrated writing environment you can choose from an extensive variety of TeX editors, the most complete are:
+
+- [TeXstudio](https://www.texstudio.org/)
+- [Texmaker](http://www.xm1math.net/texmaker/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+## Visual Studio Code LaTeX Workshop extension
+
+[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) is an extension for Visual Studio Code, aiming to provide all-in-one features and utilities for LaTeX typesetting with Visual Studio Code.
+
+In order to compile documents using a Docker image you have to enable this feature and define the image you want to use to compile your document.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/payvision-development/latex-template/master/pictures/latex-workshop.png" alt="LaTeX Workshop settings" width="550">
+</p>
+
+The following settings should be applied in the `settings.json` file order to compile our documents with our custom Docker image:
+
+```json
+{
+   "latex-workshop.docker.enabled": true,
+   "latex-workshop.docker.image.latex": "latex",
+   "latex-workshop.latex.tools": [
+      {
+         "name": "latexmk",
+         "command": "latexmk",
+         "args": [
+         "-synctex=1",
+         "-interaction=nonstopmode",
+         "-file-line-error",
+         "--shell-escape",
+         "-pdf",
+         "-outdir=%OUTDIR%",
+         "%DOC%"
+         ],
+         "env": {}
+      },
+      {
+         "name": "pdflatex",
+         "command": "pdflatex",
+         "args": [
+         "-synctex=1",
+         "-interaction=nonstopmode",
+         "-file-line-error",
+         "--shell-escape",
+         "%DOC%"
+         ],
+         "env": {}
+      },
+      {
+         "name": "bibtex",
+         "command": "bibtex",
+         "args": [
+         "%DOCFILE%"
+         ],
+         "env": {}
+      }
+   ]
+}
 ```
 
 # Typesetting and code examples
