@@ -2,6 +2,10 @@
 
 LaTeX is a great tool to create documents. It's based on the 'WYSIWYM' (what you see is what you mean) idea, meaning you only have to focus on the contents of your document and the computer will take care of the formatting.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/payvision-development/latex-template/master/pictures/example.png" alt="PDF example" width="750">
+</p>
+
 ## Prerequisites
 
 If you’re new to TeX and LaTeX or just want an easy installation, get a full TeX distribution.
